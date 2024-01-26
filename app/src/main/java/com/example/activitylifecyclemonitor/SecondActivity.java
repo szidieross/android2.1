@@ -12,6 +12,7 @@ public class SecondActivity extends AppCompatActivity {
 
     private Button backButton;
     private Button homeButton;
+    private Button b3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +23,7 @@ public class SecondActivity extends AppCompatActivity {
 
         backButton = findViewById(R.id.backButton);
         homeButton = findViewById(R.id.homeButton);
+        b3 = findViewById(R.id.b3);
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,6 +36,13 @@ public class SecondActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 goToHome();
+            }
+        });
+
+        b3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToThird();
             }
         });
     }
@@ -81,5 +90,10 @@ public class SecondActivity extends AppCompatActivity {
     private void goToHome() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+    }
+
+    private void goToThird() {
+        Intent i = new Intent(this, ThirdActivity.class);
+        startActivity(i);
     }
 }
